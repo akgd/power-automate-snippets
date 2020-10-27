@@ -1,3 +1,6 @@
+Format now like 2020-02-01
+```formatDateTime(utcNow(),'yyyy-MM-dd')```
+
 Format SharePoint date like 2020-02-01.
 
 ```formatDateTime(body('Get_item')?['NotificationDateCalc'],'yyyy-MM-dd')```
