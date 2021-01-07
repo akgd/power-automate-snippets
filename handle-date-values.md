@@ -13,3 +13,11 @@ Format SharePoint date like 02/01/2020.
 Check if SharePoint date field is empty. If yes, return nothing. If no, add five hours date (to resolve our time zone issues) and format.
 
 ```if(empty(triggerBody()?['Date2']),'',formatDateTime(addHours(triggerBody()?['Date2'],5),'yyyy-MM-dd'))```
+
+Get the day of the week. This returns 0-6 (Sunday to Saturday)
+
+```dayOfWeek(utcNow())```
+
+Get the day of the month
+
+```dayOfMonth(utcNow())```
