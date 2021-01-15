@@ -1,3 +1,3 @@
-# Snippets for Microsoft's Power Platform
+# Snippets and reminders for Microsoft Power Automate
 
-Expressions, forumlas, and reminders for Power Automate and Power Apps. 
+Expressions, forumlas, and reminders for Power Automate. 
