@@ -2,17 +2,25 @@ Format now like 2020-02-01
 
 ```formatDateTime(utcNow(),'yyyy-MM-dd')```
 
-Format SharePoint date like 2020-02-01.
+Format SharePoint date like 2020-02-01
 
-```formatDateTime(body('Get_item')?['NotificationDateCalc'],'yyyy-MM-dd')```
+```formatDateTime(body('Get_item')?['YourDateField'],'yyyy-MM-dd')```
 
-Format SharePoint date like 02/01/2020.
+Format SharePoint date like 02/01/2020
 
-```formatDateTime(body('Get_item')?['NotificationDateCalc'],'MM/dd/yyyy')```
+```formatDateTime(body('Get_item')?['YourDateField'],'MM/dd/yyyy')```
 
-Check if SharePoint date field is empty. If yes, return nothing. If no, add five hours date (to resolve our time zone issues) and format.
+Format SharePoint date like 02/01/2020 3:02 PM
 
-```if(empty(triggerBody()?['Date2']),'',formatDateTime(addHours(triggerBody()?['Date2'],5),'yyyy-MM-dd'))```
+```formatDateTime(body('Get_item')?['YourDateField'],'yyyy h:mm tt')```
+
+Format SharePoint date like Monday, December 20, 2021
+
+```formatDateTime(body('Get_item')?['YourDateField'],'dddd, MMMM dd, yyyy')```
+
+Check if SharePoint date field is empty. If yes, return nothing. If no, add five hours date (to resolve time zone issues for site set to Eastern US time) and format.
+
+```if(empty(triggerBody()?['YourDateField']),'',formatDateTime(addHours(triggerBody()?['YourDateField'],5),'yyyy-MM-dd'))```
 
 Get the day of the week. This returns 0-6 (Sunday to Saturday)
 
