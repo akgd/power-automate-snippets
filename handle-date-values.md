@@ -18,6 +18,10 @@ Format SharePoint date like Monday, December 20, 2021
 
 ```formatDateTime(body('Get_item')?['YourDateField'],'dddd, MMMM dd, yyyy')```
 
+Format SharePoint date for use in REST queries
+
+```formatDateTime(addDays(utcNow(), -1),'yyyy-MM-ddThh:mm:ss')```
+
 Check if SharePoint date field is empty. If yes, return nothing. If no, add five hours date (to resolve time zone issues for site set to Eastern US time) and format.
 
 ```if(empty(triggerBody()?['YourDateField']),'',formatDateTime(addHours(triggerBody()?['YourDateField'],5),'yyyy-MM-dd'))```
